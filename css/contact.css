@@ -145,12 +145,32 @@ button:hover {
 
 /* mobile */
 @media (max-width: 768px) {
-    .bottom-photo-section {
-      height: 180px;
+
+    .contact-container {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 20px;
     }
   
-    .overlay-text {
-      font-size: 1.2rem;
-      padding: 0.5rem;
+    .form-section {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .main-content p {
+      max-width: 100%;
+      padding: 0 1rem;
+      font-size: 1rem;
+      text-align: left;
+    }
+  
+    .photo-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .photo-container img {
+      max-width: 90%;
+      height: auto;
     }
   }
