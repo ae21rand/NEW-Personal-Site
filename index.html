@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexi Randt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="script.js" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Lexi Randt</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Portfolio</a>
+                <div class="dropdown-content">
+                    <a href="photography.html">Photography</a>
+                    <a href="graphic-design.html">Graphic Design</a>
+                    <a href="fine-art.html">Fine Art</a>
+                    <a href="branding.html">Branding Projects</a>
+                    <a href="promotional.html">Promotional Work</a>
+                    <a href="sbi.html">SBI</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+
+
+
+    <div class="main">
+        <div class="photo-container">
+            <img src="images/mirror-pic.JPG" alt="Your Photo" class="home-photo" />
+        </div>
+
+        <p>
+            Hi! I'm Lexi, a designer and student at Siena College studying computer science and multimedia design.
+            Design is a big passion of mine, and I hope to incorporate it into my career.
+            It drives me to create work that is clean, intentional, and thoughtfully crafted.
+            Welcome to my little corner on the internet!
+        </p>
+
+        <h2>Browse my work:</h2>
+        <div class="tile-grid">
+            <!-- <div class="project-tile" data-link="promotional.html">
+                <img src="images/gd1.jpg" alt="promotional">
+                <div class="overlay">
+                    <span class="project-title">Promotional Work</span>
+                </div>
+            </div> -->
+            <div class="project-tile" data-link="branding.html">
+                <img src="images/alexcarnival.png" alt="promotional">
+                <div class="overlay">
+                    <span class="project-title">Branding Projects</span>
+                </div>
+            </div>
+            <div class="project-tile" data-link="sbi.html">
+                <img src="images/sbi.jpg" alt="Siena Beverage Institute">
+                <div class="overlay">
+                    <span class="project-title">Siena Beverage Institute</span>
+                </div>
+            </div>
+            <!-- <div class="project-tile" data-link="graphic-design.html">
+                <img src="images/jar.jpg" alt="Graphic Design Page">
+                <div class="overlay">
+                    <span class="project-title">Graphic Design</span>
+                </div>
+            </div> -->
+            <div class="project-tile" data-link="promotional.html">
+                <img src="images/gd1.jpg" alt="promotional">
+                <div class="overlay">
+                    <span class="project-title">Promotional Work</span>
+                </div>
+            </div>
+            <div class="project-tile" data-link="photography.html">
+                <img src="images/photo/bw/Kujalleq-7-8-23.jpeg" alt="photography">
+                <div class="overlay">
+                    <span class="project-title">Photography</span>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    <footer>
+        &copy; 2025 Lexi Randt. All rights reserved.
+    </footer>
+
+    <script>
+        document.querySelectorAll('.project-tile').forEach(tile => {
+            tile.addEventListener('click', () => {
+                const link = tile.getAttribute('data-link');
+                if (link) window.location.href = link;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

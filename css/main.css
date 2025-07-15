@@ -1,0 +1,582 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  max-width: 1000px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #202123;
+}
+
+h2 {
+  color: #808080;
+}
+
+footer {
+  font-size: 0.8rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+
+/* ---------- Home Page Photo Styling ---------- */
+
+.home-photo {
+  width: 40%;
+  /* ← controls size on large screens */
+  max-width: 1400px;
+  /* ← prevents it from getting too big */
+  height: auto;
+  /* ← maintains aspect ratio */
+
+  /* Centering */
+  display: block;
+  margin: 2rem auto;
+  /* ← vertical + horizontal centering */
+
+  /* Optional Styling */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* ← soft shadow */
+}
+
+/* Make it responsive on small screens */
+@media (max-width: 768px) {
+  .home-photo {
+    width: 70%;
+    /* ← scales up on smaller devices */
+  }
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.button,
+.button-row button,
+.button-row :hover {
+  cursor: pointer;
+}
+
+/*--------PHOTO GALLERY--------*/
+
+.photo-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 columns */
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .photo-row {
+    grid-template-columns: 1fr;
+    /* 1 column */
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 601px) {
+  .photo-row {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns */
+  }
+}
+
+.photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.photo:hover {
+  transform: scale(1.01);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+/* --------- Project BUTTONS Tiles (Reusable Grid) --------- */
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.project-tile {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 2;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-tile:hover {
+  transform: scale(1.01);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(32, 33, 35, 0.65);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.project-tile:hover .overlay {
+  opacity: 1;
+}
+
+.project-title {
+  color: white;
+  font-size: 1rem;
+  text-align: right;
+}
+
+/* Make the grid stack on smaller screens */
+@media (max-width: 800px) {
+  .tile-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 2000px) {
+  .tile-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+
+
+
+
+
+/* ------------- Links -----------------*/
+a.external-link {
+  color: #006b54;
+  /* Use your brand's gold tone or another highlight color */
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+a.external-link:hover {
+  color: #202123;
+}
+
+
+
+/* ----------- Media Gallery ------------ */
+.media-gallery {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.media-gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #202123;
+}
+
+.media-row {
+  display: flex;
+  justify-content: center;
+  /* center horizontally */
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 1600px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+}
+
+.media-row.single-item {
+  grid-template-columns: 1fr;
+  /* just one column */
+  justify-items: center;
+  /* center content in the column */
+}
+
+.media-item {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 1px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* 🔁 This is the key line to stack vertically */
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  /* Optional: space between stacked images */
+}
+
+.media-item img {
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  /* Preserves aspect ratio inside its box */
+  display: block;
+}
+
+.media-item img+p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+@media (max-width: 600px) {
+  .media-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .media-row {
+    flex-direction: column;
+  }
+
+  .media-item {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .media-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1400px) {
+  .media-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+/* --------------- GALLERY GRID --------------*/
+.media-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .media-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .media-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/*------------ IMAGES --------------*/
+
+.flex-image {
+  display: block;
+  /* Makes <img> act like a block element */
+  margin: 2rem auto;
+  /* Auto left/right centers it */
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+}
+
+.fixed-height-img {
+  height: 200px;
+  /* Set your desired height here */
+  width: auto;
+  /* Maintain aspect ratio */
+  max-width: 100%;
+  /* Prevent overflow on small screens */
+  display: block;
+  /* Avoid inline spacing issues */
+  margin: 0 auto;
+  /* Optional: center it */
+}
+
+
+/*--------------- MEDIA SLIDESHOW -------------------*/
+.media-slideshow {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #fdfdfd;
+}
+
+.slideshow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  gap: 1rem;
+  /* space between buttons and image */
+  position: relative;
+}
+
+/* .slide {
+  position: static; /* override absolute 
+  display: none;
+  max-width: 700px;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.slide.active {
+  display: block;
+} */
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+  /* avoid interaction on hidden slides */
+}
+
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+  /* enable interaction on visible slide */
+  z-index: 1;
+}
+
+.prev,
+.next {
+  position: static;
+  /* remove absolute */
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.caption {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+
+.responsive-img {
+  width: 90vw;
+  /* 90% of the viewport width */
+  max-width: 600px;
+  /* Don't let it get too big on desktop */
+  height: auto;
+  /* Maintain aspect ratio */
+  display: block;
+  margin: 2rem auto;
+  /* Center horizontally with spacing around */
+  box-sizing: border-box;
+}
+
+
+/*-----------CENTERED MEDIA GALLERY---------------*/
+
+.media-gallery-centered {
+  background-color: #ffffff;
+  padding: 3rem 1rem;
+  text-align: center;
+  max-width: 1000px;
+}
+
+.media-gallery-centered .media-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  padding-bottom: 1rem;
+}
+
+.media-gallery-centered .media-block img {
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain; /* Preserves aspect ratio inside its box */
+  display: block;
+  min-width: 1px;
+  min-height: 1px;
+}
+
+.media-gallery-centered .media-block img.vertical {
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  max-width: 70%;
+  object-fit: contain;
+  /* Preserves aspect ratio inside its box */
+  display: block;
+}
+
+
+.media-gallery-centered .media-block p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;;
+}
+
+/*----------- PDF ---------------*/
+
+.pdf-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 90vh; /* Makes it almost full-screen height */
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.pdf-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --------- SECTION DIVIDER --------*/
+.section-divider {
+  border: none;
+  height: 3px;
+  background-color: #ccc;
+  width: 80%;
+  margin: 2rem auto; /* vertical spacing + center alignment */
+}
+
+/* --------- Pocket heroes Lightbox --------*/
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.lightbox-trigger {
+  cursor: pointer;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexi Randt - Promotional Work SCAD</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">LR</a>
+        </div>
+        <div class="nav-links">
+            <a href="resume.html">Resume</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn, active">Portfolio</a>
+                <div class="dropdown-content">
+                    <a href="photography.html">Photography</a>
+                    <a href="graphic-design.html">Graphic Design</a>
+                    <a href="fine-art.html">Fine Art</a>
+                    <a href="branding.html">Branding Projects</a>
+                    <a href="promotional.html" class="active">Promotional Work</a>
+                    <a href="sbi.html">SBI</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="main">
+        <h1>Siena Creative Arts Department</h1>
+        <p>
+            With Siena’s Creative Arts Department, I design promotional posters for events throughout the year.
+        </p>
+
+        <section class="media-gallery-centered">
+            <div class="media-block">
+                <img src="images/guysdolls.png" alt="Guys and Dolls" class="vertical lightbox-trigger"
+                    style="max-height:800px" />
+            </div>
+            <br><br><br>
+
+            <div class="media-block">
+                <img src="images/scad/spring-cabaret.jpg" alt="Spring Cabaret" class="lightbox-trigger" />
+            </div>
+            <br><br><br>
+
+            <div class="media-block">
+                <img src="images/scad/fall-choral.png" alt="Fall Choral" class="vertical lightbox-trigger"
+                    style="max-height:800px" />
+            </div>
+            <br><br><br>
+
+            <div class="media-block">
+                <img src="images/scad/lessonscarols.png" alt="Lessons and Carols" class="vertical lightbox-trigger"
+                    style="max-height:800px" />
+            </div>
+            <br><br><br>
+        </section>
+
+
+
+        <footer>
+            &copy; 2025 Lexi Randt. All rights reserved.
+        </footer>
+
+
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <img id="lightbox-img" class="lightbox-img" src="" alt="enlarged view" />
+            <span class="close" onclick="closeLightbox()">×</span>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const lightbox = document.getElementById("lightbox");
+                const lightboxImg = document.getElementById("lightbox-img");
+
+                document.querySelectorAll('.lightbox-trigger').forEach(img => {
+                    img.addEventListener('click', () => {
+                        lightboxImg.src = img.src;
+                        lightbox.style.display = "flex";
+                    });
+                });
+
+                window.closeLightbox = function () {
+                    lightbox.style.display = "none";
+                    lightboxImg.src = "";
+                }
+            });
+        </script>
+
+</body>
+
+</html>

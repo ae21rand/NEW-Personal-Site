@@ -1,0 +1,156 @@
+/* Make the page take full height and push footer down */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+main.content {
+    min-height: 100vh;
+    /* Take full viewport height */
+    display: flex;
+    flex: 1;
+    /* This makes the main content expand and push footer down */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+.main-content p {
+    max-width: 1200px;     /* Match contact-container */
+    margin: 0 auto 2rem;   /* Center horizontally + spacing below */
+    text-align: center;    /* Center the text itself */
+    padding: 0 1rem;       /* Some horizontal padding for smaller screens */
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: flex-start;
+    /* Align top edges */
+    gap: 2rem;
+    max-width: 1200px;
+    /* Prevent it from stretching too wide */
+    margin: 0 auto;
+    /* Center the whole thing on the page */
+    padding: 40px 20px;
+    /* Add breathing room */
+    flex-wrap: wrap;
+    /* Stack on smaller screens */
+}
+
+/* Form styles */
+.form-section {
+    border: 1px solid #ccc;
+    padding: 30px;
+    border-radius: 0px;
+    width: 50%;
+}
+
+.name-fields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.name-fields .input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 48%;
+    min-width: 140px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+
+.full-width {
+    width: 100%;
+}
+
+input,
+textarea {
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 0px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #202123;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4b4b4b;
+}
+
+
+/* ------------ BOTTOM PHOTO -------------- */
+
+.bottom-photo-section {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    /* Adjust height as needed */
+    background-image: url('../images/main-photo.jpg');
+    /* Replace with your actual image path */
+    background-size: cover;
+    background-position: center;
+    margin-top: auto;
+    /* Push to bottom of page content */
+    flex-shrink: 0;
+}
+
+.bottom-photo-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* 40% dark overlay */
+}
+
+.overlay-text {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    padding: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+/* mobile */
+@media (max-width: 768px) {
+    .bottom-photo-section {
+      height: 180px;
+    }
+  
+    .overlay-text {
+      font-size: 1.2rem;
+      padding: 0.5rem;
+    }
+  }

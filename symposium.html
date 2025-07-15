@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexi Randt - Laudato Si</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/photo.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">LR</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Portfolio</a>
+                <div class="dropdown-content">
+                    <a href="photography.html">Photography</a>
+                    <a href="graphic-design.html">Graphic Design</a>
+                    <a href="fine-art.html">Fine Art</a>
+                    <a href="branding.html">Branding Projects</a>
+                    <a href="promotional.html">Promotional Work</a>
+                    <a href="sbi.html">SBI</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="main">
+        <h2>Fall 2024 Symposium on Integral Ecology</h2>
+        <img class="lightbox-trigger" src="images/symposium/sym-sticker.png" alt="Design Work 3"
+            style="height: 400px; width: auto; display: block; margin: 2rem auto;" />
+        <p>
+            Over the summer I worked with Franciscian Friars at Siena's <b>Laudato Si' Center for Integral Ecology</b>.
+            I designed 6 posters that were featured at the Fall 2024 Symposium on Integral Ecology, along with a sticker
+            to promote the event.
+        </p>
+
+        <div class="photo-gallery">
+            <figure>
+                <img class="lightbox-trigger" src="images/symposium/poster1.png" alt="Poster 1 - Climate Change Impacts on New York State" />
+                <figcaption> </figcaption>
+                <img class="lightbox-trigger" src="images/symposium/poster4.png" alt="Poster 4- Voices of the Present" />
+                <figcaption></figcaption>
+            </figure>
+            <figure>
+                <img class="lightbox-trigger" src="images/symposium/poster2.png" alt="Poster 2 - Time is Running Out" />
+                <figcaption> </figcaption>
+                <img class="lightbox-trigger" src="images/symposium/poster5.png" alt="Poster 5 - A Voice of the Past" />
+                <figcaption></figcaption>
+            </figure>
+            <figure>
+                <img class="lightbox-trigger" src="images/symposium/poster3.jpg" alt="Poster 3 - Hope on the Horizon" />
+                <figcaption> </figcaption>
+                <img class="lightbox-trigger" src="images/symposium/poster6.png" alt="Poster 6 - Sustainability at Siena" />
+                <figcaption></figcaption>
+            </figure>
+        </div>
+
+        <br>
+        <!-- <section class="media-slideshow">
+                <div class="slideshow-container">
+                    <button class="prev" onclick="changeSlide(-1)">❮</button>
+                    <img class="lightbox-trigger" src="images/symposium/poster1.png"
+                        class="slide lightbox-trigger-slide"
+                        alt="Poster 1 - Climate Change Impacts on New York State" />
+                    <img src="images/symposium/poster2.png" class="slide lightbox-trigger-slide" alt="Poster 2" />
+                    <img src="images/symposium/poster3.png" class="slide lightbox-trigger-slide"
+                        alt="Poster 3 - Hope on the Horizon" />
+                    <img src="images/symposium/poster4.png" class="slide lightbox-trigger-slide"
+                        alt="Poster 4- Voices of the Present" />
+                    <img src="images/symposium/poster5.png" class="slide lightbox-trigger-slide"
+                        alt="Poster 5 - A Voice of the Past" />
+                    <img src="images/symposium/poster6.png" class="slide lightbox-trigger-slide"
+                        alt="Poster 6 - Sustainability at Siena" />
+                    <button class="next" onclick="changeSlide(1)">❯</button>
+                </div>
+                <p id="caption" class="caption"></p>
+            </section> -->
+
+
+        <p>
+            Additionally, I designed a branded backdrop and banner to be displayed at future events,
+            as well as stickers to promote the center.
+        </p>
+
+        <section class="media-gallery">
+            <div class="media-row">
+                <div class="media-item">
+                    <img class="lightbox-trigger" src="images/symposium/ls-banner.jpg" alt="LS Center Banner" />
+                    <p>Center Banner</p>
+                </div>
+                <div class="media-item">
+                    <img class="lightbox-trigger" src="images/symposium/step-repeat-ls.png" alt="Step & Repeat" />
+                    <p>Step & Repeat Banner</p>
+                    <img class="lightbox-trigger" src="images/symposium/ls-sticker.png" alt="Center Sticker" />
+                    <p>Center Sticker</p>
+                </div>
+            </div>
+            <!-- Repeat as needed -->
+        </section>
+
+
+        <div class="photo-container">
+            <img src="images/symposium/group-pic-friars.JPG"
+                alt="Lexi, Anuk, Price (summer interns) with Friars Br.Jimmy, Br. Michael & Br.Jacek"
+                class="home-photo" />
+        </div>
+    </div>
+
+    <p>
+        If you'd like to know more about the Laudato Si' Center,
+        <a href="https://www.siena.edu/centers-institutes/laudato-si/" target="_blank" class="external-link">click
+            here</a>.
+    </p>
+
+    <footer>
+        &copy; 2025 Lexi Randt. All rights reserved.
+    </footer>
+
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" class="lightbox-img" src="" alt="Enlarged View" />
+        <span class="close" onclick="closeLightbox()">×</span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function changeSlide(n) {
+            currentSlide = (currentSlide + n + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        showSlide(currentSlide);
+
+        // LIGHTBOX SCRIPT
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        document.querySelectorAll('.lightbox-trigger, .lightbox-trigger-slide').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.style.display = "flex";
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.style.display = "none";
+            lightboxImg.src = "";
+        }
+    </script>
+</body>
+
+</html>

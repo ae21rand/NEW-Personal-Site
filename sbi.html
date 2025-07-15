@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexi Randt - SBI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">LR</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn, active">Portfolio</a>
+                <div class="dropdown-content">
+                    <a href="photography.html">Photography</a>
+                    <a href="graphic-design.html">Graphic Design</a>
+                    <a href="fine-art.html">Fine Art</a>
+                    <a href="branding.html">Branding Projects</a>
+                    <a href="promotional.html">Promotional Work</a>
+                    <a href="sbi.html" class="active">SBI</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="main">
+        <h1>Siena Beverage Institute</h1>
+        <p>
+            At the Siena Beverage Institute, I research the history, production, and tasting notes of a variety of
+            beverages and help lead educational tastings for students, faculty, and alumni.
+            During the summer we also work with external partners on various projects.
+            My focus is on the visual and design aspect of marketing and content creation. Here's a glimpse at some of
+            the photography & design work I've done for SBI so far.
+        </p>
+
+        <div class="photo-row">
+            <div class="photo">
+                <img class="lightbox-trigger" src="images/sbi.jpg" alt="Tasting Photo 1" />
+            </div>
+            <div class="photo">
+                <img class="lightbox-trigger" src="images/sbi/aqua-vitae.jpg" alt="Tasting Photo 2" />
+            </div>
+            <div class="photo">
+                <img class="lightbox-trigger" src="images/sbi/pretty.jpg" alt="Tasting Photo 3" />
+            </div>
+            <div class="photo">
+                <img class="lightbox-trigger" src="images/sbi/swirl.JPG" alt="Tasting Photo 4" />
+            </div>
+            <div class="photo">
+                <img class="lightbox-trigger" src="images/sbi/jeremy.jpg" alt="Tasting Photo 5" />
+            </div>
+            <div class="photo">
+                <img class="lightbox-trigger" src="images/sbi/tito.JPG" alt="Tasting Photo 6" />
+            </div>
+            <div class="photo">
+                <img class="lightbox-trigger" src="images/sbi/tiki.jpg" alt="Tasting Photo 7" />
+            </div>
+            <div class="photo">
+                <img class="lightbox-trigger" src="images/sbi/cheese.jpg" alt="Tasting Photo 8" />
+            </div>
+        </div>
+
+
+        <section class="media-gallery-centered">
+
+            <div class="media-block">
+                <img class="lightbox-trigger" src="images/sbi/jar-label.png" alt="Honey Jar Label Design"
+                    style="max-width: 600px;" />
+                <p><b>Honey Jar Label</b><br><em>Made using Figma</em></p>
+            </div>
+            <br><br>
+
+            <div class="media-block">
+                <img class="lightbox-trigger" src="images/sbi/wine.png" alt="Wine Tasting Sheet" />
+                <p><b>Wine Tasting Sheet</b><br><em>Made using Figma</em></p>
+            </div>
+
+            <div class="media-block">
+                <img class="lightbox-trigger" src="images/sbi/mead.png" alt="Mead Tasting Sheet" />
+                <p><b>Mead Tasting Sheet</b><br><em>Made using Figma</em></p>
+            </div>
+
+            <div class="media-block">
+                <img class="lightbox-trigger" src="images/sbi/nintendo.jpg" alt="Nintendo Tasting Sheet" />
+                <p><b>Nintendo Tasting Sheet</b><br><em>Made using Figma</em></p>
+            </div>
+            <br><br>
+
+            <div class="media-block">
+                <img class="lightbox-trigger" src="images/sbi/tavernn.jpg" alt="SBI Tavern on the Green Design" />
+                <p><b>Tavern on the Green Graphics</b><br><em>Made using Procreate & Figma</em></p>
+            </div>
+
+        </section>
+
+        <p>
+            If you'd like to know more about the Beverage Institute,
+            <a href="https://www.siena.edu/centers-institutes/beverageinstitute/" target="_blank"
+                class="external-link">click here</a>.
+        </p>
+
+    </div> <!-- closes .main -->
+
+    <footer>
+        &copy; 2025 Lexi Randt. All rights reserved.
+    </footer>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" class="lightbox-img" src="" alt="enlarged view" />
+        <span class="close" onclick="closeLightbox()">×</span>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImg = document.getElementById("lightbox-img");
+
+            document.querySelectorAll('.lightbox-trigger').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightbox.style.display = "flex";
+                });
+            });
+
+            window.closeLightbox = function () {
+                lightbox.style.display = "none";
+                lightboxImg.src = "";
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexi Randt - Promotional Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">LR</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn, active">Portfolio</a>
+                <div class="dropdown-content">
+                    <a href="photography.html">Photography</a>
+                    <a href="graphic-design.html">Graphic Design</a>
+                    <a href="fine-art.html">Fine Art</a>
+                    <a href="branding.html">Branding Projects</a>
+                    <a href="promotional.html" class="active">Promotional Work</a>
+                    <a href="sbi.html">SBI</a>
+                </div>
+            </div>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="main">
+        <h1>Promotional Work</h1>
+        <div class="tile-grid">
+
+            <div class="project-tile" data-link="symposium.html">
+                <img src="images/symposium/sym-sticker.png" alt="2024 Integral Ecology Symposium"
+                    style="width: 100%; height: 100%; object-fit: contain; background-color: white;" />
+                <div class="overlay">
+                    <span class="project-title">Laudato Si' Center</span>
+                </div>
+            </div>
+
+            <div class="project-tile" data-link="scad.html">
+                <img src="images/gd1.jpg" alt="Project 2">
+                <div class="overlay">
+                    <span class="project-title">Siena Creative Arts Department</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <p>
+            <br><br>
+            Check out my
+            <a href="https://lexirandt.weebly.com" target="_blank" class="external-link">weebly site</a>
+            which features my college multimedia design course projects.
+        </p>
+
+    </div>
+
+
+    <footer>
+        &copy; 2025 Lexi Randt. All rights reserved.
+    </footer>
+
+    <script>
+        document.querySelectorAll('.project-tile').forEach(tile => {
+            tile.addEventListener('click', () => {
+                const link = tile.getAttribute('data-link');
+                if (link) window.location.href = link;
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

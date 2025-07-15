@@ -1,0 +1,202 @@
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
+  width: 95vw;
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.02);
+}
+
+.photo-gallery figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.photo-gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #444;
+  text-align: center;
+  max-width: 90%;
+}
+
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+
+.bento-scroll-wrapper {
+  padding: 1rem 0;
+}
+
+.bento-scroll {
+  display: flex;
+  gap: 1rem;
+  animation: scroll-left 30s linear infinite;
+  width: max-content;
+}
+
+.bento-scroll img {
+  height: 150px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.bento-scroll img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .bento-scroll img {
+    height: 100px;
+  }
+}
+
+
+
+.bento-scroll-masonry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  animation: scroll-left 100s linear infinite;
+  width: max-content;
+  align-content: flex-start;
+}
+
+.bento-scroll-masonry img {
+  height: 200px;
+  /* consistent height for all images */
+  width: auto;
+  /* width adapts to image ratio */
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease-in-out;
+}
+
+.bento-scroll-masonry img:hover {
+  transform: scale(1.05);
+}
+
+.bento-scroll-wrapper.reverse .bento-scroll-masonry {
+  animation: scroll-right 100s linear infinite;
+}
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+
+/* Hero section for photography */
+.photo-hero {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay with 10% black opacity */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Title text */
+.hero-title {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  .photo-hero {
+    height: 40vh;
+  }
+}
