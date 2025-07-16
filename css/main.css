@@ -20,6 +20,17 @@ body {
   padding: 3rem 1rem;
 }
 
+@media (max-width: 768px) {
+  .main {
+    padding-top: 1rem;  /* reduce top space */
+    padding-bottom: 2rem;
+  }
+
+  h1 {
+    margin-top: 0.5rem; /* if h1 has margin, reduce it too */
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -199,19 +210,28 @@ footer {
 }
 
 /* Make the grid stack on smaller screens */
-@media (max-width: 800px) {
-  .tile-grid {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-    padding: 1rem;
-  }
-}
 
 @media (max-width: 2000px) {
   .tile-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tile-grid {
+    grid-template-columns: 1fr; /* Stack in one column */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .project-tile {
+    width: 100%;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
   }
 }
 
