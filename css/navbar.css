@@ -11,8 +11,9 @@
   color: white;
   text-decoration: none;
   font-size: 2rem;
-  font-weight: bold;
+  font-family: 'Abril Fatface', serif;
 }
+
 
 .nav-links {
   display: flex;
