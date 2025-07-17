@@ -133,3 +133,26 @@
       font-size: 1.2rem;
     }
   }
+
+
+
+  .intro-section {
+    flex: 2 1 400px; /* Grow 2x more than the others */
+    padding: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .intro-section h2 {
+    margin-top: 0;
+  }
+  
+  .intro-section p {
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .intro-section {
+      width: 100%;
+      padding: 1rem 0;
+    }
+  }

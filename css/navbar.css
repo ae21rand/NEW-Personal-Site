@@ -14,6 +14,11 @@
   font-family: 'Abril Fatface', serif;
 }
 
+.logo-img {
+  height: 100px; /* Adjust as needed */
+  width: auto;
+}
+
 
 .nav-links {
   display: flex;
